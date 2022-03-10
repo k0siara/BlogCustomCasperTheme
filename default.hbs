@@ -26,6 +26,18 @@
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
+    <!-- MailerLite Universal -->
+    <script>
+    (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+    var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+    f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+    var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+    _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+    var ml_account = ml('accounts', '3548435', 'g8f0t2k6x8', 'load');
+    </script>
+    <!-- End MailerLite Universal -->
+
 </head>
 <body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}">
 <div class="viewport">
@@ -58,10 +70,12 @@
                     {{#if @site.twitter}}
                         <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                     {{/if}}
+                        <a class="gh-social" href="https://www.github.com/k0siara" title="GitHub" target="_blank" rel="noopener">{{> "icons/github"}}</a>
+                        <a class="gh-social" href="https://www.linkedin.com/in/patrykkosieradzki/" title="LinkedIn" target="_blank" rel="noopener">{{> "icons/linkedin"}}</a>
                 </div>
 
                 {{#unless @member}}
-                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                    <a class="gh-head-button" href="javascript:;" onclick="ml_account('webforms', '5057321', 'd2i3k7', 'show')" data-portal="signup">Sign up for Android Dev Newsletter</a>
                 {{else}}
                     <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
                 {{/unless}}
